@@ -77,30 +77,16 @@ function loop() {
 		},
 		json: true
 	}, function(error, response, body) {
-		
-	
 		var data = eval('(' + body.d.data + ')');
-
 		var eventos = data.BasicCodes.PRODUCTPRICES;
-		console.log('\033[2J');
+		console.log('\033[2J'); //eu acho que essa limpeza de tela nao funciona no terminal do windows #chora.
 		for (var i = 0; i < eventos.length; i++) {
 			if (eval(eventos[i].Quantity) >= 1)
 			{
 				var partidaId = eval(eventos[i].PRPProductId.replace('IMT', ''));
 				var categoriaId = eventos[i].PRPCategoryId;
 				var quantidade = eventos[i].Quantity;
-
-				if (partidaId == 39)
-				{
-					console.log("	");
-				}
-
 				console.log('Qtd:' + quantidade + '		' + arrPartidas[partidaId] + '		Categoria: ' + categoriaId);
-
-				if (partidaId == 39)
-				{
-					console.log("	");
-				}
 			}
 		};
 	});
