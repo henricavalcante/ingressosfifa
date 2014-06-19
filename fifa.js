@@ -1,54 +1,54 @@
 var request = require("request");
 
 var arrPartidas = ['',
-'12.06 - 1 - Brazil x Croatia - Arena de Sao Paulo, Sao Paulo ',
-'13.06 - 2 - Mexico x Cameroon - Estadio das Dunas, Natal ',
-'13.06 - 3 - Spain x Netherlands - Arena Fonte Nova, Salvador ',
-'13.06 - 4 - Chile x Australia - Arena Pantanal, Cuiaba ',
-'14.06 - 5 - Colombia x Greece - Estadio Mineirao, Belo Horizonte ',
-'14.06 - 6 - Côte dIvoirx - Japan - Arena Pernambuco, Recife ',
-'14.06 - 7 - Uruguay x Costa Rica - Estadio Castelao, Fortaleza ',
-'14.06 - 8 - England x Italy - Arena Amazonia, Manaus ',
-'15.06 - 9 - Switzerland x Ecuador - Estadio Nacional, Brasilia ',
-'15.06 - 10 - France x Honduras - Estadio BeiraRio, Porto Alegre ',
-'15.06 - 11 - Argentina x Bosnia - Estadio do Maracana, Rio de Janeiro ',
-'16.06 - 12 - Iran x Nigeria - Arena da Baixada, Curitiba ',
-'16.06 - 13 - Germany x Portugal - Arena Fonte Nova, Salvador ',
-'16.06 - 14 - Ghana x USA - Estadio das Dunas, Natal ',
-'17.06 - 15 - Belgium x Algeria - Estadio Mineirao, Belo Horizonte ',
-'17.06 - 16 - Russia x Korea Republic - Arena Pantanal, Cuiaba ',
-'17.06 - 17 - Brazil x Mexico - Estadio Castelao, Fortaleza ',
-'18.06 - 18 - Cameroon x Croatia - Arena Amazonia, Manaus ',
-'18.06 - 19 - Spain x Chile - Estadio do Maracana, Rio de Janeiro ',
-'18.06 - 20 - Australia x Netherlands - Estadio BeiraRio, Porto Alegre ',
-'19.06 - 21 - Colombia x Côte dIvoire - Estadio Nacional, Brasilia ',
-'19.06 - 22 - Japan x Greece - Estadio das Dunas, Natal ',
-'19.06 - 23 - Uruguay x England - Arena de Sao Paulo, Sao Paulo ',
-'20.06 - 24 - Italy x Costa Rica - Arena Pernambuco, Recife ',
-'20.06 - 25 - Switzerland x France - Arena Fonte Nova, Salvador ',
-'20.06 - 26 - Honduras x Ecuador - Arena da Baixada, Curitiba ',
-'21.06 - 27 - Argentina x Iran - Estadio Mineirao, Belo Horizonte ',
-'21.06 - 28 - Nigeria x Bosnia - Arena Pantanal, Cuiaba ',
-'21.06 - 29 - Germany x Ghana - Estadio Castelao, Fortaleza ',
-'22.06 - 30 - USA x Portugal - Arena Amazonia, Manaus ',
-'22.06 - 31 - Belgium x Russia - Estadio do Maracana, Rio de Janeiro ',
-'22.06 - 32 - Korea Republix - Algeria - Estadio BeiraRio, Porto Alegre ',
-'23.06 - 33 - Cameroon x Brazil - Estadio Nacional, Brasilia ',
-'23.06 - 34 - Croatia x Mexico - Arena Pernambuco, Recife ',
-'23.06 - 35 - Australia x Spain - Arena da Baixada, Curitiba ',
-'23.06 - 36 - Netherlands x Chile - Arena de Sao Paulo, Sao Paulo ',
-'24.06 - 37 - Japan x Colombia - Arena Pantanal, Cuiaba ',
-'24.06 - 38 - Greece x Côte dIvoire - Estadio Castelao, Fortaleza ',
-'24.06 - 39 - Italy x Uruguay - Estadio das Dunas, Natal ',
-'24.06 - 40 - Costa Rica x England - Estadio Mineirao, Belo Horizonte ',
-'25.06 - 41 - Honduras x Switzerland - Arena Amazonia, Manaus ',
-'25.06 - 42 - Ecuador x France - Estadio do Maracana, Rio de Janeiro ',
-'25.06 - 43 - Nigeria x Argentina - Estadio BeiraRio, Porto Alegre ',
-'25.06 - 44 - Bosnia x Iran - Arena Fonte Nova, Salvador ',
-'26.06 - 45 - USA x Germany - Arena Pernambuco, Recife ',
-'26.06 - 46 - Portugal x Ghana - Estadio Nacional, Brasilia ',
-'26.06 - 47 - Korea Republix - Belgium - Arena de Sao Paulo, Sao Paulo ',
-'26.06 - 48 - Algeria x Russia - Arena da Baixada, Curitiba',
+'12.06 - 1 - Brazil x Croatia - Sao Paulo ',
+'13.06 - 2 - Mexico x Cameroon - Natal ',
+'13.06 - 3 - Espanha x Holanda - Salvador ',
+'13.06 - 4 - Chile x Australia - Cuiaba ',
+'14.06 - 5 - Colombia x Greece - Belo Horizonte ',
+'14.06 - 6 - Côte dIvoirx - Japan - Recife ',
+'14.06 - 7 - Uruguay x Costa Rica - Fortaleza ',
+'14.06 - 8 - England x Italy - Manaus ',
+'15.06 - 9 - Suiça x Equador - Brasilia ',
+'15.06 - 10 - France x Honduras - Porto Alegre ',
+'15.06 - 11 - Argentina x Bosnia - Rio de Janeiro ',
+'16.06 - 12 - Iran x Nigeria - Curitiba ',
+'16.06 - 13 - Germany x Portugal - Salvador ',
+'16.06 - 14 - Ghana x USA - Natal ',
+'17.06 - 15 - Belgium x Algeria - Belo Horizonte ',
+'17.06 - 16 - Russia x Korea - Cuiaba ',
+'17.06 - 17 - Brazil x Mexico - Fortaleza ',
+'18.06 - 18 - Cameroon x Croatia - Manaus ',
+'18.06 - 19 - Espanha x Chile - Rio de Janeiro ',
+'18.06 - 20 - Australia x Holanda - Porto Alegre ',
+'19.06 - 21 - Colombia x Côte dIvoire - Brasilia ',
+'19.06 - 22 - Japan x Greece - Natal ',
+'19.06 - 23 - Uruguay x England - Sao Paulo ',
+'20.06 - 24 - Italy x Costa Rica - Recife ',
+'20.06 - 25 - Suiça x France - Salvador ',
+'20.06 - 26 - Honduras x Equador - Curitiba ',
+'21.06 - 27 - Argentina x Iran - Belo Horizonte ',
+'21.06 - 28 - Nigeria x Bosnia - Cuiaba ',
+'21.06 - 29 - Germany x Ghana - Fortaleza ',
+'22.06 - 30 - USA x Portugal - Manaus ',
+'22.06 - 31 - Belgium x Russia - Rio de Janeiro ',
+'22.06 - 32 - Korea - Algeria - Porto Alegre ',
+'23.06 - 33 - Cameroon x Brazil - Brasilia ',
+'23.06 - 34 - Croatia x Mexico - Recife ',
+'23.06 - 35 - Australia x Espanha - Curitiba ',
+'23.06 - 36 - Holanda x Chile - Sao Paulo ',
+'24.06 - 37 - Japan x Colombia - Cuiaba ',
+'24.06 - 38 - Greece x Côte dIvoire - Fortaleza ',
+'24.06 - 39 - Italy x Uruguay - Natal ',
+'24.06 - 40 - Costa Rica x England - Belo Horizonte ',
+'25.06 - 41 - Honduras x Suiça - Manaus ',
+'25.06 - 42 - Equador x France - Rio de Janeiro ',
+'25.06 - 43 - Nigeria x Argentina - Porto Alegre ',
+'25.06 - 44 - Bosnia x Iran - Salvador ',
+'26.06 - 45 - USA x Germany - Recife ',
+'26.06 - 46 - Portugal x Ghana - Brasilia ',
+'26.06 - 47 - Korea - Belgium - Sao Paulo ',
+'26.06 - 48 - Algeria x Russia - Curitiba',
 '28.06 - 49 - 1A x 2B - Belo Horizonte ',
 '28.06 - 50 - 1C x 2D - Rio de Janeiro ',
 '29.06 - 51 - 1B x 2A - Fortaleza ',
@@ -65,7 +65,6 @@ var arrPartidas = ['',
 '09.07 - 62 - V59 x V60 - São Paulo ',
 '12.07 - 63 - P61 x P62 - Brasília ',
 '13.07 - 64 - V61 x V62 - Rio de Janeiro '];
-
 function loop() {
 
 
@@ -77,16 +76,21 @@ function loop() {
 		},
 		json: true
 	}, function(error, response, body) {
+		
+	
 		var data = eval('(' + body.d.data + ')');
+
 		var eventos = data.BasicCodes.PRODUCTPRICES;
-		console.log('\033[2J'); //eu acho que essa limpeza de tela nao funciona no terminal do windows #chora.
+		console.log('\033[2J');
 		for (var i = 0; i < eventos.length; i++) {
 			if (eval(eventos[i].Quantity) >= 1)
 			{
 				var partidaId = eval(eventos[i].PRPProductId.replace('IMT', ''));
 				var categoriaId = eventos[i].PRPCategoryId;
 				var quantidade = eventos[i].Quantity;
-				console.log('Qtd:' + quantidade + '		' + arrPartidas[partidaId] + '		Categoria: ' + categoriaId);
+
+				console.log('Qtd:' + quantidade + '	' + arrPartidas[partidaId] + '	Cat: ' + categoriaId);
+
 			}
 		};
 	});
